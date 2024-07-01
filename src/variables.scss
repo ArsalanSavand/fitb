@@ -1,0 +1,61 @@
+@import "bootstrap/scss/functions";
+
+$font-family-base: "Circular-Std";
+$primary: #3E40DB;
+
+$border-radius: 5px;
+$border-radius-sm: 3px;
+
+/* Input */
+
+$input-padding-x: 8px;
+$input-padding-y: 0;
+$input-height: 24px;
+
+$input-bg: rgba(216, 220, 235, 0.3);
+$input-placeholder-color: #687196;
+$input-disabled-bg: $input-bg;
+$input-disabled-color: rgb(216, 220, 235);
+
+$input-focus-color: $primary;
+$input-focus-bg: rgba($primary, 0.07);
+
+$input-border-width: none;
+$input-btn-focus-box-shadow: none;
+
+/* Button */
+
+$btn-box-shadow: none;
+
+/* Dropdown */
+
+$dropdown-border-color: rgba(104, 113, 150, 0.3);
+$dropdown-link-hover-bg: rgba(170, 175, 255, 0.3);
+$dropdown-color: rgb(3, 9, 41);
+$dropdown-link-active-bg: $dropdown-link-hover-bg;
+$dropdown-link-active-color: $dropdown-color;
+
+$dropdown-padding-y: 10px;
+$dropdown-padding-x: 8px;
+$dropdown-item-padding-x: 8px;
+$dropdown-item-padding-y: 0;
+$dropdown-min-width: 303px;
+
+/* Checkbox */
+
+$form-check-input-bg: #A4AAC0;
+$form-check-input-border: none;
+$form-check-input-focus-box-shadow: none;
+$form-check-input-width: 1.143em;
+$form-check-input-checked-bg-color: $primary;
+$form-check-input-border-radius: $border-radius-sm;
+
+/* Styles */
+
+$box-shadow: 0px 4.5px 5px -1px rgba(216, 220, 235, 1), 0px 2.5px 3px -1.5px rgba(200, 207, 233, 1);
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";

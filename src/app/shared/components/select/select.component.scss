@@ -1,0 +1,45 @@
+@import "src/variables";
+
+//.btn.btn-primary {
+//  border: none;
+//}
+
+button.form-control {
+  color: $input-placeholder-color;
+
+  &.active,
+  &.show {
+    &:not(:disabled) {
+      background-color: $input-focus-bg;
+      color: $input-focus-color;
+    }
+  }
+}
+
+.dropdown {
+  --bs-dropdown-item-border-radius: #{$border-radius-lg};
+
+  .dropdown-toggle::after {
+    content: none;
+  }
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    font-size: $font-size-sm;
+    height: 34px;
+
+    .form-check-input {
+      margin-right: 6px;
+      pointer-events: none;
+    }
+
+    &:nth-child(even):not(.active):not(:focus) {
+      background-color: rgba(241, 243, 248, 0.75);
+
+      &:hover {
+        background-color: $dropdown-link-hover-bg;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@import "src/variables";
+
+input {
+  &:not(:placeholder-shown):not(:disabled) {
+    background-color: $input-focus-bg;
+    color: $input-focus-color;
+  }
+}

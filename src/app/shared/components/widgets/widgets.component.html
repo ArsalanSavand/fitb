@@ -1,0 +1,45 @@
+<div class="widgets" [formGroup]="formGroup">
+  @for (widget of widgets; track $index) {
+    @switch (widget.type) {
+
+      <!-- Text -->
+      @case ('text') {
+        {{ widget['data'] }}
+      }
+
+      <!-- Field control -->
+      @case ('fieldControl') {
+        @switch (config.formData[widget['formDataPointer']]['type']) {
+
+          <!-- Input -->
+          @case ('input') {
+            <app-input [data]="config.formData[widget['formDataPointer']]"
+                       [formControlName]="widget['formDataPointer']"/>
+          }
+
+          <!-- Select -->
+          @case ('select-with-options') {
+            <app-select [formControlName]="widget['formDataPointer']"
+                        [options]="config.formData[widget['formDataPointer']].options || []"
+                        [formFieldData]="config.formData[widget['formDataPointer']]"/>
+          }
+          @default {
+            NOT IMPLEMENTED
+          }
+        }
+
+        <!-- Conditional children -->
+        @if (widget['nodes']?.length) {
+          @for (node of widget['nodes']; track $index) {
+            @if (node.filter.$in.includes(formGroup.get(widget['formDataPointer'])?.value)) {
+              <app-widgets [widgets]="node.children"/>
+            }
+          }
+        }
+      }
+      @default {
+        NOT IMPLEMENTED
+      }
+    }
+  }
+</div>

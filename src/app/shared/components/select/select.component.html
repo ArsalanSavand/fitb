@@ -1,0 +1,17 @@
+<div ngbDropdown (openChange)="openChanged($event)" class="d-inline-block">
+
+  <!-- Dropdown display -->
+  <button class="form-control" [class.active]="value" [class.is-invalid]="invalid" ngbDropdownToggle [disabled]="disabled">
+    {{ selectedOption?.name || formFieldData.placeholder }}
+  </button>
+
+  <!-- Dropdown options -->
+  <div ngbDropdownMenu class="dropdown-menu shadow">
+    @for (option of options; track option.value) {
+      <button ngbDropdownItem class="border-radius" (click)="onSelect(option.value)" [class.active]="option.value === value">
+        <input class="form-check-input mt-0" [checked]="option.value === value" [readOnly]="true" type="checkbox">
+        {{ option.name }}
+      </button>
+    }
+  </div>
+</div>

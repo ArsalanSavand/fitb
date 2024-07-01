@@ -1,0 +1,21 @@
+/* Fonts */
+
+@import url("https://naologic-com-assets.naologic.com/fonts/circular-std/circular-std.css");
+
+/* Variables */
+
+@import "variables";
+
+/* Bootstrap */
+
+@import "bootstrap/scss/bootstrap";
+
+.form-control {
+  height: $input-height;
+
+  &:disabled {
+    &::placeholder {
+      color: $input-disabled-color;
+    }
+  }
+}

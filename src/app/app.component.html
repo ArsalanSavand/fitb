@@ -1,0 +1,62 @@
+<div class="container py-3">
+  <form [formGroup]="formGroup">
+    <app-widgets [formGroup]="formGroup" [widgets]="config.formDataFillInTheBlanks.data" />
+<!--    <ng-container *ngTemplateOutlet="gen; context: {list: config.formDataFillInTheBlanks.data}"></ng-container>-->
+<!--    <ng-template #gen let-list=list>-->
+<!--      @for (item of list; track $index) {-->
+<!--        @switch (item.type) {-->
+
+<!--          &lt;!&ndash; Text &ndash;&gt;-->
+<!--          @case ('text') {-->
+<!--            {{ item['data'] }}-->
+<!--          }-->
+
+<!--          &lt;!&ndash; Field control &ndash;&gt;-->
+<!--          @case ('fieldControl') {-->
+<!--            @switch (config.formData[item['formDataPointer']]['type']) {-->
+
+<!--              &lt;!&ndash; Input &ndash;&gt;-->
+<!--              @case ('input') {-->
+<!--                <app-input [data]="config.formData[item['formDataPointer']]"-->
+<!--                           [formControlName]="item['formDataPointer']"/>-->
+<!--              }-->
+
+<!--              &lt;!&ndash; Select &ndash;&gt;-->
+<!--              @case ('select-with-options') {-->
+<!--                <app-select [formControlName]="item['formDataPointer']"-->
+<!--                            [options]="config.formData[item['formDataPointer']].options || []"-->
+<!--                            [formFieldData]="config.formData[item['formDataPointer']]"/>-->
+<!--              }-->
+<!--              @default {-->
+<!--                NOT IMPLEMENTED-->
+<!--              }-->
+<!--            }-->
+
+<!--            &lt;!&ndash; Conditional children &ndash;&gt;-->
+<!--            @if (item['nodes']?.length) {-->
+<!--              @for (node of item['nodes']; track $index) {-->
+<!--                @if (node.filter.$in.includes(formGroup.get(item['formDataPointer'])?.value)) {-->
+<!--                  <ng-container *ngTemplateOutlet="gen; context: {list: node['children']}"/>-->
+<!--                }-->
+<!--              }-->
+<!--            }-->
+<!--          }-->
+<!--          @default {-->
+<!--            NOT IMPLEMENTED-->
+<!--          }-->
+<!--        }-->
+<!--      }-->
+<!--    </ng-template>-->
+  </form>
+
+<!--  <button (click)="formGroup.controls['labelType']?.patchValue('custom-label')">set to USD</button>-->
+<!--  <button (click)="formGroup.get('currency')?.disable()">Disabled</button>-->
+<!--  <button (click)="formGroup.get('currency')?.enable()">Enable</button>-->
+</div>
+
+<div class="container border-top py-3 mt-3">
+  <pre><code>{{ formGroup.value | json }}</code></pre>
+</div>
+
+
+<router-outlet/>
