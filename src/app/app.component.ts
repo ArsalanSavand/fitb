@@ -75,6 +75,5 @@ export class AppComponent implements OnInit {
       }
       this.generateControl(widget);
     }
-    console.log(this.formGroup);
   }
 }
