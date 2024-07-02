@@ -1,4 +1,3 @@
-import { JsonPipe } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, Optional, Self } from '@angular/core';
 import { FormGroupDirective, NgControl, NgForm } from '@angular/forms';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
@@ -13,7 +12,6 @@ import { BaseValueAccessorDirective } from '@app/shared/directives';
   standalone: true,
   imports: [
     NgbDropdownModule,
-    JsonPipe,
   ],
 })
 export class SelectComponent extends BaseValueAccessorDirective<string> {

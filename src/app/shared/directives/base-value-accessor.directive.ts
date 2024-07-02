@@ -71,7 +71,8 @@ export abstract class BaseValueAccessorDirective<T = any> implements ControlValu
   private updateValidity(): void {
     const parent: FormGroupDirective | NgForm = this.parentFormGroup || this.parentForm;
     const submitted: boolean = parent && parent.submitted;
-    this.invalid = !!(this.ngControl && this.ngControl.invalid && (this.ngControl.dirty || this.ngControl.touched || submitted));
+    const extra: boolean = this.ngControl.dirty || this.ngControl.touched || submitted;
+    this.invalid = !!(this.ngControl && this.ngControl.invalid && extra);
   }
 
   ngDoCheck(): void {
